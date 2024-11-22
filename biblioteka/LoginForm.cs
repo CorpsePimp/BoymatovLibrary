@@ -31,7 +31,7 @@ namespace biblioteka
 
                 CurrentRole = username == "admin" ? "Admin" : "User";
 
-                Form1 mainForm = new Form1();
+                MainForm mainForm = new MainForm();
                 mainForm.Show();
                 this.Hide();
             }

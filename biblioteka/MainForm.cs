@@ -1,15 +1,16 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.IO;
 using System.Linq;
 using System.Windows.Forms;
 
 namespace biblioteka
 {
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         private BookManager bookManager = new BookManager();
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
             UpdateLocalization(); // Применить локализацию при запуске
@@ -199,5 +200,32 @@ namespace biblioteka
             return $"ID: {book.Id}, {Localization.Translate("Title")}: {book.Title}, {Localization.Translate("Author")}: {book.Author}, {Localization.Translate("Year")}: {book.Year}";
         }
 
+        private void QrCodeBtn_Click(object sender, EventArgs e)
+        {
+            {
+                if (lstBooks.SelectedIndex >= 0)
+                {
+                    var selectedBook = bookManager.GetAllBooks()[lstBooks.SelectedIndex];
+
+                    // Создаем JSON-строку с данными книги
+                    var bookJson = JsonConvert.SerializeObject(new
+                    {
+                        selectedBook.Id,
+                        selectedBook.Title,
+                        selectedBook.Author,
+                        selectedBook.Year
+                    });
+
+                    // Открываем новую форму для отображения QR-кода
+                    var qrForm = new QrCodeForm(bookJson);
+                    qrForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show(Localization.Translate("QRCodeSelectBookError"), Localization.Translate("Error"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 }
+           

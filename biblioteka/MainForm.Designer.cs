@@ -1,6 +1,6 @@
 ﻿namespace biblioteka
 {
-    partial class Form1
+    partial class MainForm
     {
         private System.ComponentModel.IContainer components = null;
         private System.Windows.Forms.ListBox lstBooks; // Оставляем стандартный ListBox
@@ -53,6 +53,7 @@
             this.lblBooks = new Guna.UI2.WinForms.Guna2HtmlLabel();
             this.btnClose = new Guna.UI2.WinForms.Guna2ControlBox();
             this.btnMinimize = new Guna.UI2.WinForms.Guna2ControlBox();
+            this.QrCodeBtn = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).BeginInit();
             this.SuspendLayout();
             // 
@@ -104,20 +105,10 @@
             0,
             0,
             0});
-            this.numYear.Minimum = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
             this.numYear.Name = "numYear";
             this.numYear.Size = new System.Drawing.Size(200, 36);
             this.numYear.TabIndex = 2;
             this.numYear.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
-            this.numYear.Value = new decimal(new int[] {
-            0,
-            0,
-            0,
-            0});
             // 
             // txtSearch
             // 
@@ -155,7 +146,7 @@
             this.btnRemoveBook.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnRemoveBook.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnRemoveBook.ForeColor = System.Drawing.Color.White;
-            this.btnRemoveBook.Location = new System.Drawing.Point(20, 400);
+            this.btnRemoveBook.Location = new System.Drawing.Point(20, 412);
             this.btnRemoveBook.Name = "btnRemoveBook";
             this.btnRemoveBook.Size = new System.Drawing.Size(200, 36);
             this.btnRemoveBook.TabIndex = 5;
@@ -181,7 +172,7 @@
             this.btnShowAllBooks.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnShowAllBooks.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnShowAllBooks.ForeColor = System.Drawing.Color.White;
-            this.btnShowAllBooks.Location = new System.Drawing.Point(250, 400);
+            this.btnShowAllBooks.Location = new System.Drawing.Point(250, 412);
             this.btnShowAllBooks.Name = "btnShowAllBooks";
             this.btnShowAllBooks.Size = new System.Drawing.Size(200, 36);
             this.btnShowAllBooks.TabIndex = 7;
@@ -194,7 +185,7 @@
             this.btnImport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnImport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnImport.ForeColor = System.Drawing.Color.White;
-            this.btnImport.Location = new System.Drawing.Point(480, 400);
+            this.btnImport.Location = new System.Drawing.Point(480, 412);
             this.btnImport.Name = "btnImport";
             this.btnImport.Size = new System.Drawing.Size(90, 36);
             this.btnImport.TabIndex = 8;
@@ -207,7 +198,7 @@
             this.btnExport.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnExport.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnExport.ForeColor = System.Drawing.Color.White;
-            this.btnExport.Location = new System.Drawing.Point(580, 400);
+            this.btnExport.Location = new System.Drawing.Point(580, 412);
             this.btnExport.Name = "btnExport";
             this.btnExport.Size = new System.Drawing.Size(90, 36);
             this.btnExport.TabIndex = 9;
@@ -220,19 +211,18 @@
             this.btnLanguageToggle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnLanguageToggle.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.btnLanguageToggle.ForeColor = System.Drawing.Color.White;
-            this.btnLanguageToggle.Location = new System.Drawing.Point(676, 411);
+            this.btnLanguageToggle.Location = new System.Drawing.Point(689, 9);
             this.btnLanguageToggle.Name = "btnLanguageToggle";
-            this.btnLanguageToggle.Size = new System.Drawing.Size(61, 25);
+            this.btnLanguageToggle.Size = new System.Drawing.Size(61, 29);
             this.btnLanguageToggle.TabIndex = 10;
             this.btnLanguageToggle.Text = "EN";
             this.btnLanguageToggle.Click += new System.EventHandler(this.btnLanguageToggle_Click);
             // 
             // lstBooks
             // 
-            this.lstBooks.ItemHeight = 16;
-            this.lstBooks.Location = new System.Drawing.Point(250, 40);
+            this.lstBooks.Location = new System.Drawing.Point(250, 57);
             this.lstBooks.Name = "lstBooks";
-            this.lstBooks.Size = new System.Drawing.Size(487, 340);
+            this.lstBooks.Size = new System.Drawing.Size(581, 329);
             this.lstBooks.TabIndex = 11;
             // 
             // lblTitle
@@ -240,7 +230,7 @@
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
             this.lblTitle.Location = new System.Drawing.Point(20, 20);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(69, 18);
+            this.lblTitle.Size = new System.Drawing.Size(53, 15);
             this.lblTitle.TabIndex = 12;
             this.lblTitle.Text = "Название";
             // 
@@ -249,7 +239,7 @@
             this.lblAuthor.BackColor = System.Drawing.Color.Transparent;
             this.lblAuthor.Location = new System.Drawing.Point(20, 80);
             this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(43, 18);
+            this.lblAuthor.Size = new System.Drawing.Size(33, 15);
             this.lblAuthor.TabIndex = 13;
             this.lblAuthor.Text = "Автор";
             // 
@@ -258,7 +248,7 @@
             this.lblYear.BackColor = System.Drawing.Color.Transparent;
             this.lblYear.Location = new System.Drawing.Point(20, 140);
             this.lblYear.Name = "lblYear";
-            this.lblYear.Size = new System.Drawing.Size(84, 18);
+            this.lblYear.Size = new System.Drawing.Size(66, 15);
             this.lblYear.TabIndex = 14;
             this.lblYear.Text = "Год издания";
             // 
@@ -267,16 +257,16 @@
             this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Location = new System.Drawing.Point(20, 280);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(43, 18);
+            this.lblSearch.Size = new System.Drawing.Size(35, 15);
             this.lblSearch.TabIndex = 15;
             this.lblSearch.Text = "Поиск";
             // 
             // lblBooks
             // 
             this.lblBooks.BackColor = System.Drawing.Color.Transparent;
-            this.lblBooks.Location = new System.Drawing.Point(250, 20);
+            this.lblBooks.Location = new System.Drawing.Point(250, 23);
             this.lblBooks.Name = "lblBooks";
-            this.lblBooks.Size = new System.Drawing.Size(41, 18);
+            this.lblBooks.Size = new System.Drawing.Size(33, 15);
             this.lblBooks.TabIndex = 16;
             this.lblBooks.Text = "Книги";
             // 
@@ -287,7 +277,7 @@
             this.btnClose.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnClose.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(205)))), ((int)(((byte)(161)))));
             this.btnClose.IconColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(707, 8);
+            this.btnClose.Location = new System.Drawing.Point(801, 8);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(30, 30);
             this.btnClose.TabIndex = 17;
@@ -300,14 +290,28 @@
             this.btnMinimize.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
             this.btnMinimize.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(232)))), ((int)(((byte)(205)))), ((int)(((byte)(161)))));
             this.btnMinimize.IconColor = System.Drawing.Color.White;
-            this.btnMinimize.Location = new System.Drawing.Point(671, 8);
+            this.btnMinimize.Location = new System.Drawing.Point(765, 8);
             this.btnMinimize.Name = "btnMinimize";
             this.btnMinimize.Size = new System.Drawing.Size(30, 30);
             this.btnMinimize.TabIndex = 18;
             // 
-            // Form1
+            // QrCodeBtn
             // 
-            this.ClientSize = new System.Drawing.Size(752, 450);
+            this.QrCodeBtn.BorderRadius = 10;
+            this.QrCodeBtn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(222)))), ((int)(((byte)(197)))), ((int)(((byte)(164)))));
+            this.QrCodeBtn.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.QrCodeBtn.ForeColor = System.Drawing.Color.White;
+            this.QrCodeBtn.Location = new System.Drawing.Point(689, 412);
+            this.QrCodeBtn.Name = "QrCodeBtn";
+            this.QrCodeBtn.Size = new System.Drawing.Size(90, 36);
+            this.QrCodeBtn.TabIndex = 19;
+            this.QrCodeBtn.Text = "Qr-Code";
+            this.QrCodeBtn.Click += new System.EventHandler(this.QrCodeBtn_Click);
+            // 
+            // MainForm
+            // 
+            this.ClientSize = new System.Drawing.Size(846, 460);
+            this.Controls.Add(this.QrCodeBtn);
             this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.txtAuthor);
             this.Controls.Add(this.numYear);
@@ -328,12 +332,14 @@
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnMinimize);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Управление библиотекой";
             ((System.ComponentModel.ISupportInitialize)(this.numYear)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
+
+        private Guna.UI2.WinForms.Guna2Button QrCodeBtn;
     }
 }
